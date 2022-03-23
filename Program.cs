@@ -77,7 +77,11 @@ namespace Lexicon_Calculator_Assignment
 
         private static void multiplication()
         {
-
+            Console.WriteLine("Welcome to multiply");
+            double firstNum = Helper.ParseDouble(Helper.conWriteRead("Please enter a number:"));
+            double secondNum = Helper.ParseDouble(Helper.conWriteRead("Please enter what to multiply by:"));
+            Console.Write("The Result is: ");
+            Console.WriteLine(firstNum * secondNum);
         }
     }
 }
