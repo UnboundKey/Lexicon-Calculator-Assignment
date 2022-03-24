@@ -10,12 +10,12 @@ namespace UnboundKey
         /// </summary>
         /// <param name="printString"></param>
         /// <returns></returns>
-        public static string conWriteLineRead(string printString)
+        public static string ConWriteLineRead(string printString)
         {
             Console.WriteLine(printString);
             return Console.ReadLine();
         }
-        public static string conWriteRead(string printString)
+        public static string ConWriteRead(string printString)
         {
             Console.Write(printString);
             return Console.ReadLine();
@@ -121,7 +121,7 @@ namespace UnboundKey
             string reversedInput = "";
             for (int i = Input.Length; i > 0; i--)
             {
-                reversedInput = reversedInput + Input[i - 1];
+                reversedInput += Input[i - 1];
             }
             return reversedInput;
         }
