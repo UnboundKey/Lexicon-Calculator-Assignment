@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace UnboundKey
 {
-    class Helper
+    static class Helper
     {
         /// <summary>
         /// This string will print to the console and then return the input from the user as a string
@@ -25,7 +25,7 @@ namespace UnboundKey
         /// </summary>
         /// <param name="ParseString"></param>
         /// <returns></returns>
-        public static int ParseInt(string ParseString)
+        public static int ParseInt(this string ParseString)
         {
             int conSelection = 0;
             try
@@ -45,7 +45,7 @@ namespace UnboundKey
         /// <param name="ParseString"></param>
         /// <param name="FallbackValue"></param>
         /// <returns></returns>
-        public static int ParseInt(string ParseString, int FallbackValue)
+        public static int ParseInt(this string ParseString, int FallbackValue)
         {
             int conSelection = FallbackValue;
             try
@@ -59,7 +59,7 @@ namespace UnboundKey
             return conSelection;
         }
 
-        public static int ParseInt(string ParseString, string ErrorMessage)
+        public static int ParseInt(this string ParseString, string ErrorMessage)
         {
             int conSelection = 0;
             try
@@ -73,7 +73,7 @@ namespace UnboundKey
             return conSelection;
         }
 
-        public static float ParseFloat(string ParseString)
+        public static float ParseFloat(this string ParseString)
         {
             float conSelection = 0;
             try
@@ -87,7 +87,7 @@ namespace UnboundKey
             return conSelection;
         }
 
-        public static float ParseFloat(string ParseString, float FallbackValue)
+        public static float ParseFloat(this string ParseString, float FallbackValue)
         {
             float conSelection = FallbackValue;
             try
@@ -102,7 +102,7 @@ namespace UnboundKey
         }
 
 
-        public static float ParseFloat(string ParseString, string ErrorMessage)
+        public static float ParseFloat(this string ParseString, string ErrorMessage)
         {
             float conSelection = 0;
             try
@@ -114,6 +114,19 @@ namespace UnboundKey
                 Console.WriteLine(ErrorMessage);
             }
             return conSelection;
+        }
+        public static double ParseDouble(this string ParseString)
+        {
+            double returnValue = 0;
+            try
+            {
+                returnValue = double.Parse(ParseString);
+            }
+            catch
+            {
+                Console.WriteLine("Cannot parse input string, returning 0");
+            }
+            return returnValue;
         }
 
         public static string StringFlipper(string Input)
@@ -180,19 +193,6 @@ namespace UnboundKey
             }
 
             return sortedInts;
-        }
-        public static double ParseDouble(string ParseString)
-        {
-            double returnValue = 0;
-            try
-            {
-                returnValue = double.Parse(ParseString);
-            }
-            catch
-            {
-                Console.WriteLine("Cannot parse input string, returning 0");
-            }
-            return returnValue;
         }
     }
 }

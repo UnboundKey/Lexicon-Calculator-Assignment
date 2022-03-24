@@ -19,7 +19,7 @@ namespace Lexicon_Calculator_Assignment
                 }
                 string conInput = Console.ReadLine();
                 // makes sure input is a number, if not it defaults to one past the max programs triggering the default response;
-                int conParsedInput = Helper.ParseInt(conInput, programs.Length + 1);
+                int conParsedInput = conInput.ParseInt(programs.Length);
 
                 switch (conParsedInput)
                 {
@@ -45,8 +45,9 @@ namespace Lexicon_Calculator_Assignment
         private static void Addition()
         {
             Console.WriteLine("Welcome to addition");
-            double firstNum = Helper.ParseDouble(Helper.ConWriteRead("Please enter a number to add:"));
-            double secondNum = Helper.ParseDouble(Helper.ConWriteRead("Please enter another number:"));
+            //double firstNum = Helper.ParseDouble(Helper.ConWriteRead("Please enter a number to add:"));
+            double firstNum = Helper.ConWriteRead("Please enter a number to add:").ParseDouble();
+            double secondNum = Helper.ConWriteRead("Please enter another number:").ParseDouble();
 
             Console.Write("The Sum of these numbers are: ");
             Console.WriteLine(firstNum + secondNum);
@@ -58,8 +59,8 @@ namespace Lexicon_Calculator_Assignment
         private static void Subtraction()
         {
             Console.WriteLine("Welcome to subtraction");
-            double firstNum = Helper.ParseDouble(Helper.ConWriteRead("Please enter a number:"));
-            double secondNum = Helper.ParseDouble(Helper.ConWriteRead("Please enter what to subtract:"));
+            double firstNum = Helper.ConWriteRead("Please enter a number:").ParseDouble();
+            double secondNum = Helper.ConWriteRead("Please enter what to subtract:").ParseDouble();
 
             Console.Write("The Sum of these numbers are: ");
             Console.WriteLine(firstNum - secondNum);
@@ -68,8 +69,8 @@ namespace Lexicon_Calculator_Assignment
         private static void Division()
         {
             Console.WriteLine("Welcome to division");
-            double firstNum = Helper.ParseDouble(Helper.ConWriteRead("Please enter a number:"));
-            double secondNum = Helper.ParseDouble(Helper.ConWriteRead("Please enter what to divide by:"));
+            double firstNum = Helper.ConWriteRead("Please enter a number:").ParseDouble();
+            double secondNum = Helper.ConWriteRead("Please enter what to divide by:").ParseDouble();
             if (firstNum == 0 || secondNum == 0)
             {
                 Console.WriteLine("Dividing by zero (0) is not possible");
@@ -84,9 +85,12 @@ namespace Lexicon_Calculator_Assignment
         private static void Multiplication()
         {
             Console.WriteLine("Welcome to multiply");
-            double firstNum = Helper.ParseDouble(Helper.ConWriteRead("Please enter a number:"));
-            double secondNum = Helper.ParseDouble(Helper.ConWriteRead("Please enter what to multiply by:"));
+            double firstNum = Helper.ConWriteRead("Please enter a number:").ParseDouble();
+            double secondNum = Helper.ConWriteRead("Please enter what to multiply by:").ParseDouble();
+            
+
             Console.Write("The Result is: ");
+
             Console.WriteLine(firstNum * secondNum);
         }
     }
