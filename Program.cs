@@ -81,16 +81,14 @@ namespace Lexicon_Calculator_Assignment
                 Console.WriteLine(firstNum / secondNum);
             }
         }
-
+        
         private static void Multiplication()
         {
             Console.WriteLine("Welcome to multiply");
             double firstNum = Helper.ConWriteRead("Please enter a number:").ParseDouble();
             double secondNum = Helper.ConWriteRead("Please enter what to multiply by:").ParseDouble();
-            
 
             Console.Write("The Result is: ");
-
             Console.WriteLine(firstNum * secondNum);
         }
     }

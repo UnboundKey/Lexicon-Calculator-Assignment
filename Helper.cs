@@ -115,6 +115,19 @@ namespace UnboundKey
             }
             return conSelection;
         }
+        public static float ParseFloat(this string ParseString, int fallbackValue, string ErrorMessage)
+        {
+            float conSelection = fallbackValue;
+            try
+            {
+                conSelection = float.Parse(ParseString);
+            }
+            catch
+            {
+                Console.WriteLine(ErrorMessage);
+            }
+            return conSelection;
+        }
         public static double ParseDouble(this string ParseString)
         {
             double returnValue = 0;
